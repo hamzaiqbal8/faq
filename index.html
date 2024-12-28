@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="contanier">
+      <div class="faq">
+        <header>
+          <img src="./images/icon-star.svg" alt="" />
+          <h2>FAQS</h2>
+        </header>
+        <div class="faq-content">
+          <div class="faq-group">
+            <div class="faq-group-header">
+              <h4 class="text-md">
+                What is front-end mentor,and how will it help me?
+              </h4>
+              <div class="fa-minus">
+                <img src="./images/icon-minus.svg" alt="" />
+              </div>
+            </div>
+            <div class="faq-group-body open">
+              <p>
+                Keep track of your contacts, gain valuable insights, analyse
+                live data and performance metrics.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-group">
+            <div class="faq-group-header">
+              <h4 class="text-md">is Front-end Mentor free?</h4>
+              <div class="fa-plus">
+                <img src="./images/icon-plus.svg" alt="" />
+              </div>
+            </div>
+            <div class="faq-group-body">
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad
+                culpa enim blanditiis rem ipsum aliquam, unde iste fugit
+                praesentium eos?
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-group">
+            <div class="faq-group-header">
+              <h4 class="text-md">
+                Can i see fornt-end mentor projects in my portfolio?
+              </h4>
+              <div class="fa-plus">
+                <img src="./images/icon-plus.svg" alt="" />
+              </div>
+            </div>
+            <div class="faq-group-body">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Incidunt, a! Quaerat, voluptatum. Animi molestias ex quasi
+                explicabo minima perferendis commodi.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-group">
+            <div class="faq-group-header">
+              <h4 class="text-md">
+                How i can get help if i,m stock on a challenger?
+              </h4>
+              <div class="fa-plus">
+                <img src="./images/icon-plus.svg" alt="" />
+              </div>
+            </div>
+            <div class="faq-group-body">
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Obcaecati doloremque assumenda aut dolorem recusandae quibusdam
+                aliquid. Repellat animi quam vitae.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let faqContainer = document.querySelector(".faq-content");
+
+        faqContainer.addEventListener("click", (e) => {
+          let groupHeader = e.target.closest(".faq-group-header");
+
+          if (!groupHeader) return;
+
+          let group = groupHeader.parentElement;
+          let groupBody = group.querySelector(".faq-group-body");
+          let icon = groupHeader.querySelector("img");
+
+          icon.classList.toggle("fa-plus");
+          icon.classList.toggle("fa-minus");
+
+          groupBody.classList.toggle("open");
+
+          let otherGroups = faqContainer.querySelectorAll(".faq-group");
+
+          otherGroups.forEach((otherGroup) => {
+            if (otherGroup !== group) {
+              let otherGroupBody = otherGroup.querySelector(".faq-group-body");
+              let otherIcon = otherGroup.querySelector(".faq-group-header img");
+
+              otherGroupBody.classList.remove("open");
+              otherIcon.classList.remove("fa-minus");
+              otherIcon.classList.add("fa-plus");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

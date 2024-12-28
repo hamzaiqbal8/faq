@@ -1,0 +1,102 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "Popins", sans-serif;
+
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  background: #fff;
+
+}
+
+header {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+header h2{
+  font-size: 2rem;
+}
+.faq {
+  width: 520px;
+  padding: 40px;
+  color: black;
+  background-color: #fff;
+}
+
+.faq .faq-group {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+
+.faq .faq-group .faq-group-header {
+  padding: 20px 0;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.faq .faq-group .faq-group-header h4 {
+  font-weight: 600;
+  width: 95%;
+}
+
+.faq .faq-group .faq-group-header img {
+  position: absolute;
+  right: 0;
+  top: 15px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.faq .faq-group .faq-group-body {
+  display: none;
+}
+
+.faq .faq-group .faq-group-body.open {
+  display: block;
+}
+
+.faq ul.faq-menu {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ddd;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.faq ul.faq-menu li {
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.faq ul.faq-menu li.active {
+  background: black;
+  color: #fff;
+}
+@media screen and (max-width:590px) {
+  .container{
+    width: 420px;
+  }
+  .faq{
+    max-width: 400px;
+    padding: 3rem;
+  }
+}
